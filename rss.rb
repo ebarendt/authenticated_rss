@@ -1,6 +1,7 @@
 require 'sinatra'
 
 get '/' do
-  `curl http://xkcd.com/rss.xml`
+  feed = "https://#{ENV['rss_user']}:#{ENV['rss_password']}@rubytapas.dpdcart.com/feed"
+  `curl #{feed}`
 end
 
